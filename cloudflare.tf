@@ -25,3 +25,13 @@ resource "cloudflare_dns_record" "www" {
   proxied = false
   comment = "TEST DNS"
 }
+
+resource "cloudflare_dns_record" "www-stg" {
+  zone_id = var.zone_id
+  name = "www-stg"
+  type = "A"
+  value = "192.168.1.2"
+  ttl = 3600
+  proxied = false
+  comment = "TEST DNS"
+}
